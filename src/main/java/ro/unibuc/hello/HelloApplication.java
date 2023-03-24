@@ -20,6 +20,8 @@ public class HelloApplication {
 	private InformationRepository informationRepository;
     @Autowired
     private ArtistRepository artistRepository;
+	@Autowired
+    private UserRepository userRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(HelloApplication.class, args);
@@ -35,6 +37,11 @@ public class HelloApplication {
 		artistRepository.save(new ArtistEntity("John Smith", "Arizona", "jazz", "Happy"));
 		artistRepository.save(new ArtistEntity("Jarry Laster","Chicago","rock", "Mistery"));
 		artistRepository.save(new ArtistEntity("Anna Fraid","Pensylvenia","dance","Welcome to the party"));
+
+		userRepository.deleteAll();
+		userRepository.save(new UserEntity("Stefan","stefan@mail.com","Brasov","074 888 943"));
+		userRepository.save(new UserEntity("Andrei","andrei@mail.com","Bucuresti","074 999 943"));
+		userRepository.save(new UserEntity("Ioana","ioana@mail.com","Timisoara","074 000 943"));
 	}
 	
 }
