@@ -1,27 +1,30 @@
 package ro.unibuc.hello.data;
 
-import org.bson.types.ObjectId;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "albums")
 public class AlbumEntity {
     @Id
-    private ObjectId id;
-    private String title;
-    private String artist;
-    private int year;
-    private double price;
+    public int id;
+    public String title;
+    public String artist;
+    public int year;
+    public double price;
 
     public AlbumEntity(){}
 
-    public AlbumEntity(String title, String artist, int year, double price) {
+    public AlbumEntity(int id,String title, String artist, int year, double price) {
+        this.id=id;
         this.title = title;
         this.artist = artist;
         this.year = year;
         this.price = price;
     }
-
+    public int getId() {
+        return id;
+    }
     public String getTitle() {
         return title;
     }
@@ -53,4 +56,11 @@ public class AlbumEntity {
     public void setPrice(double price) {
         this.price = price;
     }
+    @Override
+    public String toString() {
+        return String.format(
+                "Album[title='%s', artist='%s']",
+                id, title, artist);
+    }
+
 }

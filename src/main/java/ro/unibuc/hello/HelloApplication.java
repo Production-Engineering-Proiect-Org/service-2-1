@@ -35,9 +35,9 @@ public class HelloApplication {
 		
 		
 		albumRepository.deleteAll();
-		albumRepository.save(new AlbumEntity("Happy", "John Smith", 2000, 63));
-		albumRepository.save(new AlbumEntity("Mistery","Jarry Laster",1989,90));
-		albumRepository.save(new AlbumEntity("Life","Anna Fraid",2001,80));
+		albumRepository.save(new AlbumEntity(1,"Happy", "John Smith", 2000, 63));
+		albumRepository.save(new AlbumEntity(2,"Mistery","Jarry Laster",1989,90));
+		albumRepository.save(new AlbumEntity(3,"Life","Anna Fraid",2001,80));
 	}
 	
 }

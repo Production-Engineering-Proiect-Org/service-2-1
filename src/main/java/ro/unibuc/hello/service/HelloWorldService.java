@@ -14,6 +14,7 @@ import java.util.concurrent.atomic.AtomicLong;
 public class HelloWorldService {
 
     @Autowired
+
     private InformationRepository informationRepository;
 
     private final AtomicLong counter = new AtomicLong();
