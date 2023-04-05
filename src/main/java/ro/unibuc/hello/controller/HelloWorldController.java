@@ -1,16 +1,17 @@
 package ro.unibuc.hello.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
 import ro.unibuc.hello.dto.Greeting;
 import ro.unibuc.hello.exception.EntityNotFoundException;
 import ro.unibuc.hello.service.HelloWorldService;
 
-@Controller
+@RestController
 public class HelloWorldController {
 
     @Autowired
@@ -27,5 +28,4 @@ public class HelloWorldController {
     public Greeting info(@RequestParam(name="title", required=false, defaultValue="Overview") String title) throws EntityNotFoundException {
         return helloWorldService.buildGreetingFromInfo(title);
     }
-
 }
